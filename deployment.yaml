@@ -6,8 +6,6 @@ metadata:
     app: flaskdemo
   name: flaskdemo
 spec:
-  imagePullSecrets:
-  - name: secret-docker
   replicas: 3
   selector:
     matchLabels:
@@ -23,6 +21,8 @@ spec:
       - image: anishkumar7836/test:1
         name: flaskdemo
         resources: {}
+      imagePullSecrets:
+      - name: secret-docker
 status: {}
 ---
 apiVersion: v1
